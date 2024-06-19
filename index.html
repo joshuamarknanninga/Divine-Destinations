@@ -17,9 +17,10 @@
 </head>
 
 <body>
+    
     <!-- Modal -->
 
-    <div class="modal" id="destinationModal">
+    <!-- <div class="modal" id="destinationModal">
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
@@ -37,7 +38,7 @@
                 </form>
             </section>
         </div>
-    </div>
+    </div> -->
 
     <!-- Navbar -->
     <nav class="navbar is-dark">
@@ -49,16 +50,14 @@
                 <span></span>
             </div>
         </div>
-        <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item" href="#weather">Weather</a>
-                <a class="navbar-item" href="#tourist-spots">Tourist Spots</a>
-                <a class="navbar-item" href="#concert-venues">Concert Venues</a>
-                <a class="navbar-item" href="#restaurants-bars">Restaurants & Bars</a>
-                <a class="navbar-item" href="#hotel-search">Find a Hotel</a>
-            </div>
-        </div>
+
     </nav>
+
+    <div id="FeaturedDestinations">
+        
+    </div>
+    <button class="button">New Itinerary</button>
+    <button class="button">Edit Itinerary</button>
 
     <!-- Hero Section -->
     <section class="hero is-primary is-bold">
@@ -71,8 +70,14 @@
             </div>
         </div>
     </section>
-
+    <input
+  class="input is-link"
+  type="text"
+  placeholder="Link input"
+/>
+<button class="button">Search</button>
     <!-- Weather Section -->
+    <div id="weather">
     <section id="weather" class="section">
         <div class="container">
             <h2 class="title">Weather</h2>
@@ -80,15 +85,17 @@
         </div>
     </section>
 
-    <!-- Tourist Spots Section -->
-    <section id="tourist-spots" class="section">
+    <!-- Hotels -->
+    <div id="Hotels">
+    <section id="hotels" class="section">
         <div class="container">
             <h2 class="title">Tourist Spots</h2>
-            <div id="tourist-info"></div>
+            <div id="hotel-info"></div>
         </div>
     </section>
 
-    <!-- Concert Venues Section -->
+    <!-- Create Itinerary-->
+    <div id="CreateItinerary">
     <section id="concert-venues" class="section">
         <div class="container">
             <h2 class="title">Local Concert Venues</h2>
@@ -96,21 +103,7 @@
         </div>
     </section>
 
-    <!-- Restaurants and Bars Section -->
-    <section id="restaurants-bars" class="section">
-        <div class="container">
-            <h2 class="title">Restaurants & Bars</h2>
-            <div id="restaurants-info"></div>
-        </div>
-    </section>
 
-    <!-- Hotel Search Section -->
-    <section id="hotel-search" class="section">
-        <div class="container">
-            <h2 class="title">Find a Hotel</h2>
-            <div id="hotel-info"></div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
