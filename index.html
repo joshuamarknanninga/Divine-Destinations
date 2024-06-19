@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Destination - Travel Planner App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .hero {
+            background-image: url('./images/Divine_Destinations_Logo.png');
+            background-size: cover;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal -->
+
+    <div class="modal" id="destinationModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Enter Your Destination</p>
+            </header>
+            <section class="modal-card-body">
+                <form id="destination-form">
+                    <div class="field">
+                        <label class="label" for="destination">Destination:</label>
+                        <div class="control">
+                            <input class="input" type="text" id="destination" placeholder="Enter your destination">
+                        </div>
+                    </div>
+                    <button type="submit" class="button is-primary">Search</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">Divine Destination</a>
+            <div class="navbar-burger burger" data-target="navbarMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="#weather">Weather</a>
+                <a class="navbar-item" href="#tourist-spots">Tourist Spots</a>
+                <a class="navbar-item" href="#concert-venues">Concert Venues</a>
+                <a class="navbar-item" href="#restaurants-bars">Restaurants & Bars</a>
+                <a class="navbar-item" href="#hotel-search">Find a Hotel</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">Plan Your Perfect Trip</h1>
+                <p class="subtitle">All the information you need in one place</p>
+                <p class="subtitle">User Story: As a traveler, I want to look for a website that can give me substantial
+                    information that will prepare me for travel so that I will have a good experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Section -->
+    <section id="weather" class="section">
+        <div class="container">
+            <h2 class="title">Weather</h2>
+            <div id="weather-info"></div>
+        </div>
+    </section>
+
+    <!-- Tourist Spots Section -->
+    <section id="tourist-spots" class="section">
+        <div class="container">
+            <h2 class="title">Tourist Spots</h2>
+            <div id="tourist-info"></div>
+        </div>
+    </section>
+
+    <!-- Concert Venues Section -->
+    <section id="concert-venues" class="section">
+        <div class="container">
+            <h2 class="title">Local Concert Venues</h2>
+            <div id="concert-info"></div>
+        </div>
+    </section>
+
+    <!-- Restaurants and Bars Section -->
+    <section id="restaurants-bars" class="section">
+        <div class="container">
+            <h2 class="title">Restaurants & Bars</h2>
+            <div id="restaurants-info"></div>
+        </div>
+    </section>
+
+    <!-- Hotel Search Section -->
+    <section id="hotel-search" class="section">
+        <div class="container">
+            <h2 class="title">Find a Hotel</h2>
+            <div id="hotel-info"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2024 Divine Destination. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Show the modal on page load
+            document.querySelector('#destinationModal').classList.add('is-active');
+
+            // Handle form submission
+            document.querySelector('#destination-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                let destination = document.querySelector('#destination').value;
+                if (destination) {
+                    document.querySelector('#destinationModal').classList.remove('is-active');
+                    fetchWeather(destination);
+                    fetchHotels(destination);
+                    // Add more fetch functions for tourist spots, concert venues, etc.
+                }
+            });
+
+            // Function to fetch weather data
+            function fetchWeather(destination) {
+                $.ajax({
+                    url: `https://api.openweathermap.org/data/2.5/weather?q=${destination}&appid=YourAPIKey`,
+                    method: 'GET',
+                    success: function (data) {
+                        document.querySelector('#weather-info').innerHTML = `
+                            <p>Temperature: ${data.main.temp}°C</p>
+                            <p>Weather: ${data.weather[0].description}</p>
+                        `;
+                    },
+                    error: function (error) {
+                        console.error('Error fetching weather data', error);
+                    }
+                });
+            }
+
+            // Function to fetch hotel data
+            function fetchHotels(destination) {
+                // Example API call for hotels (replace with actual API)
+                $.ajax({
+                    url: `https://api.example.com/hotels?location=${destination}`,
+                    method: 'GET',
+                    success: function (data) {
+                        let hotelsHtml = '';
+                        data.hotels.forEach(hotel => {
+                            hotelsHtml += `
+                                <div>
+                                    <h3>${hote
