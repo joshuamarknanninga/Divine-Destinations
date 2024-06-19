@@ -1,0 +1,118 @@
+// 3rd Party Imports
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+// Variables
+
+// Mixins
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-guts {
+
+    /* other stuff we already covered */
+  
+    /* cover the modal */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    /* spacing as needed */
+    padding: 20px 50px 20px 20px;
+  
+    /* let it scroll */
+    overflow: auto;
+    
+  }
+// SCSS
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.some-text {
+  @include absCenter;
+  max-width: 800px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.pure {
+  color: #e75480;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 100px;
+  margin-top: 25px;
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, .8);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  /* // The url changes when the anchor is triggered and CSS can watch that */
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &__content {
+    @include absCenter; // Our mixin to center horizontally and vertically
+
+    width: 75%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2rem 4rem rgba(black, .2);
+    border-radius: 10px;
+    overflow: hidden; // This will keep the images sharp corners from protruding past the border-radius
+
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
+}
+
