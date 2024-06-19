@@ -17,28 +17,6 @@
 </head>
 
 <body>
-    
-    <!-- Modal -->
-
-    <!-- <div class="modal" id="destinationModal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Enter Your Destination</p>
-            </header>
-            <section class="modal-card-body">
-                <form id="destination-form">
-                    <div class="field">
-                        <label class="label" for="destination">Destination:</label>
-                        <div class="control">
-                            <input class="input" type="text" id="destination" placeholder="Enter your destination">
-                        </div>
-                    </div>
-                    <button type="submit" class="button is-primary">Search</button>
-                </form>
-            </section>
-        </div>
-    </div> -->
 
     <!-- Navbar -->
     <nav class="navbar is-dark">
@@ -53,11 +31,10 @@
 
     </nav>
 
-    <div id="FeaturedDestinations">
+    <div >
         
     </div>
-    <button class="button">New Itinerary</button>
-    <button class="button">Edit Itinerary</button>
+    
 
     <!-- Hero Section -->
     <section class="hero is-primary is-bold">
@@ -70,36 +47,54 @@
             </div>
         </div>
     </section>
-    <input
-  class="input is-link"
-  type="text"
-  placeholder="Link input"
-/>
-<button class="button">Search</button>
+
+    <div id="searchBar" class="m-3">
+
+        <div class="field has-addons">
+            <div class="control is-expanded">
+                <input class="input" type="text" id="searchBar"/>
+            </div>
+
+            <div class="control">
+                <button class="button" id="searchButton">Search</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Weather Section -->
-    <div id="weather">
     <section id="weather" class="section">
         <div class="container">
             <h2 class="title">Weather</h2>
-            <div id="weather-info"></div>
+            <div id="weather-info">
+
+            </div>
         </div>
     </section>
 
     <!-- Hotels -->
-    <div id="Hotels">
+    
     <section id="hotels" class="section">
         <div class="container">
             <h2 class="title">Tourist Spots</h2>
-            <div id="hotel-info"></div>
+            <div id="hotel-preview">
+
+            </div>
+
+            <button class="button" id="hotelSearch">Search for Hotels</button>
         </div>
     </section>
 
     <!-- Create Itinerary-->
-    <div id="CreateItinerary">
-    <section id="concert-venues" class="section">
+    
+    <section id="FeaturedDestinations" class="section">
         <div class="container">
             <h2 class="title">Local Concert Venues</h2>
-            <div id="concert-info"></div>
+            <div id="destinations-preview">
+
+            </div>
+
+            <button class="button">New Itinerary</button>
+            <button class="button">Edit Itinerary</button>
         </div>
     </section>
 
