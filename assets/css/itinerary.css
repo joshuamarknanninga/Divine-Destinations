@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100vh;
+}
+
+/* #place-search {
+    border: .1em solid;
+} */
+
+/*#search-results {
+     border: .1em solid;
+    overflow-y: scroll;
+} */
+
+/*
+#itinerary-list {
+    border: .1em solid;
+} */

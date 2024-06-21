@@ -52,6 +52,12 @@ body {
   min-height: 100vh;
 }
 
+.hero {
+  background-image: url('./images/Divine_Destinations_Logo.png');
+  background-size: cover;
+  color: white;
+}
+
 .some-text {
   @include absCenter;
   max-width: 800px;
