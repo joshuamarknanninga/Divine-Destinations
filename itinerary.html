@@ -27,14 +27,14 @@
             <div class="grid">
                 <form id="place-search" class="cell is-col-span-12 field is-grouped">
 
-                    <div class="select">
+                    <!-- <div class="select">
                         <select id="place-categories" >
                             <option value="">Category</option>
                             <option value="Food and Drink">Food and Drink</option>
                             <option>Landmarks</option>
                             <option>Activities</option>
                         </select>
-                    </div>
+                    </div> -->
                     
                     <input class="input control is-expanded" type="text" placeholder="Specify your Search" id="search-bar">
 
@@ -46,9 +46,15 @@
                 <div id="search-results" class="cell is-col-span-8">
                     <p>Results</p>
 
-                    <div class="card">
+                    
+                    <!-- <div class="card">
                         <header class="card-header">
                           <p class="card-header-title">Component</p>
+                          <button class="card-header-icon" aria-label="more options">
+                            <span class="icon">
+                              <ion-icon name="bookmark-outline"></ion-icon>
+                            </span>
+                          </button>
                         </header>
                         <div class="card-content">
                           <div class="content">
@@ -56,36 +62,44 @@
                             iaculis mauris.
                           </div>
                         </div>
-                        <footer class="card-footer">
-                          <a href="#" class="card-footer-item">Save</a>
-                          <a href="#" class="card-footer-item">Edit</a>
-                          <a href="#" class="card-footer-item">Delete</a>
-                        </footer>
-                      </div>
+
+                    </div> -->
                 </div>
 
-                <form id="itinerary-list" class="cell is-col-span-4 field is-horizontal">
-                    <div class="control">
-                        <div class="select is-small">        
-                            <select required id="Itinerary">
-                                <option value=" ">Choose an Itinerary</option>
-                            </select>
+                <div id="itinerary-list" class="cell is-col-span-4">
+                    <form id="itinerary-form" class=" field is-horizontal">
+                
+                        <div class="control">
+                            <div class="select is-small">
+                                <select required id="Itinerary">
+                                    <option value=" ">Choose an Itinerary</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                        
-                    <input class="input control is-expanded is-small" type="text" placeholder="Name your Itinerary" id="itinerary-name">
+                
+                        <div class="control">
+                            <input class="input control is-expanded is-small" type="text" placeholder="Name your Itinerary"
+                            id="itinerary-name">
+                        </div>
+                
+                        <div class="control">
+                            <button class="button is-small mb-3" id="delete-button">Delete Itinerary</button>
+                        </div>
+                
+                        <div class="control">
+                            <button class="button is-small mb-3" id="save-button">Save</button>
+                        </div>
+                
+                    </form>
 
-                    <div class="control">
-                        <button class="button is-small mb-3" id="delete-button">Delete Itinerary</button>
-                    </div>
+                    <div id="saved-places">
 
-                    <div class="control">
-                        <button class="button is-small mb-3" id="save-button">Save</button>
                     </div>
-
-                </form>
+                </div>
             </div>
         </div>
+
+        
     </main>
 
     <!-- Footer -->
@@ -97,6 +111,8 @@
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./assets/js/itinerary.js"></script>
 
 </body>

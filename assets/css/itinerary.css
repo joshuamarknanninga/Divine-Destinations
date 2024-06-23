@@ -4,19 +4,40 @@
 }
 
 main {
+    min-height: 100vh;
+}
+
+#place-search {
+    border: .1em solid;
+    height: 7vh;
+}
+
+#search-results {
+     border: .1em solid;
+   /* overflow-y: scroll;*/
+   height: 90vh;
+} 
+
+
+#itinerary-list {
+    border: .1em solid;
+}
+
+.grid {
     height: 100vh;
 }
 
-/* #place-search {
-    border: .1em solid;
+.card {
+    
+    border-radius: 0%;
+}
+/* div .card {
+    margin-bottom: .1em;
 } */
+.card-header {
+    box-shadow: none;
+}
 
-/*#search-results {
-     border: .1em solid;
-    overflow-y: scroll;
-} */
-
-/*
-#itinerary-list {
-    border: .1em solid;
-} */
+.content {
+    padding: 0 0 1em 1em;
+}
