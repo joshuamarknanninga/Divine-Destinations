@@ -8,19 +8,18 @@ main {
 }
 
 #place-search {
-    border: .1em solid;
+    /* border: .1em solid; */
     height: 7vh;
 }
 
 #search-results {
-     border: .1em solid;
-   /* overflow-y: scroll;*/
+/* border: .1em solid; */
    height: 90vh;
 } 
 
 
 #itinerary-list {
-    border: .1em solid;
+    /* border: .1em solid; */
 }
 
 .grid {

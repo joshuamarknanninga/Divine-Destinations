@@ -133,6 +133,7 @@ function displaySearchResults(searchResultsArray)
 
 function displayItinerary()
 {
+    // savedPlaces.attr('style', 'overflow-y: scroll;')
     savedPlaces.empty()
     let openNow = 'Closed';
     for (let place of placesArray)
@@ -207,38 +208,72 @@ function displayItinerary()
     }
 }
 
+function takenName()
+{
+    let nameTaken = false;
+    for(let itinerary of itineraries)
+    {
+        if (itinerary.name === itineraryName.val().trim()) {
+            nameTaken = true
+        }
+    }
+    return nameTaken
+}
 function saveItinerary(event)
 {
     event.preventDefault()
-    const itinerary = 
+    
+
+    if(itineraryName.val().trim() === '')
     {
-        name:itineraryName.val().trim(),
-        places: placesArray,
+        itineraryName.attr('class', 'input control is-expanded is-small is-danger is-focused')
+        itineraryName.attr('placeholder', 'Please enter an itinerary name.')
     }
+    else if (takenName() === true)
+    {
+        itineraryName.attr('class', 'input control is-expanded is-small is-danger is-focused')
+        itineraryName.val('Itinerary name has been taken. Please enter a new name.')
+    }
+    else
+    {
+        const itinerary =
+        {
+            name: itineraryName.val().trim(),
+            places: placesArray,
+        }
 
-    itineraries.push(itinerary)
-    localStorage.setItem('itineraries', JSON.stringify(itineraries))
+        itineraries.push(itinerary)
+        localStorage.setItem('itineraries', JSON.stringify(itineraries))
 
-    const newOption = $('<option>')
-    newOption.text(itinerary.name)
-    newOption.attr('value', itinerary.name)
-    chooseItinerary.append(newOption)
-    const emptyArray = [];
-    placesArray = emptyArray
+        const newOption = $('<option>')
+        newOption.text(itinerary.name)
+        newOption.attr('value', itinerary.name)
+        chooseItinerary.append(newOption)
+        const emptyArray = [];
+        placesArray = emptyArray
+        itineraryName.attr('disabled', true)
+    }
+    
 }
 
 function changeItinerary()
 {
-   const selectedItinerary = chooseItinerary.val()
+    
+    itineraryName.attr('class', 'input control is-expanded is-small')
+    itineraryName.attr('placeholder', 'Name your Itinerary')
+
+    const selectedItinerary = chooseItinerary.val()
     const emptyArray = [];
     placesArray = emptyArray
-   if(selectedItinerary === 'New Itinerary')
+   if(selectedItinerary === 'New Itinerary' || selectedItinerary === 'Create OR Choose an Itinerary')
     {
         itineraryName.val('')
+        itineraryName.attr('disabled', false)
     }
    else
     {
         itineraryName.val(selectedItinerary)
+        itineraryName.attr('disabled', true)
     }
     
     for(let itinerary of itineraries)
