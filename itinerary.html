@@ -27,16 +27,7 @@
             <div class="grid">
                 <form id="place-search" class="cell is-col-span-12 field is-grouped">
 
-                    <!-- <div class="select">
-                        <select id="place-categories" >
-                            <option value="">Category</option>
-                            <option value="Food and Drink">Food and Drink</option>
-                            <option>Landmarks</option>
-                            <option>Activities</option>
-                        </select>
-                    </div> -->
-                    
-                    <input class="input control is-expanded" type="text" placeholder="Specify your Search" id="search-bar">
+                    <input class="input control is-expanded" type="text" placeholder="Where do you want to go?" id="search-bar">
 
                     <button type="submit" class="button control is-info" id="search-button">Search</button>
                     
@@ -45,25 +36,6 @@
 
                 <div id="search-results" class="cell is-col-span-8">
                     <p>Results</p>
-
-                    
-                    <!-- <div class="card">
-                        <header class="card-header">
-                          <p class="card-header-title">Component</p>
-                          <button class="card-header-icon" aria-label="more options">
-                            <span class="icon">
-                              <ion-icon name="bookmark-outline"></ion-icon>
-                            </span>
-                          </button>
-                        </header>
-                        <div class="card-content">
-                          <div class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                            iaculis mauris.
-                          </div>
-                        </div>
-
-                    </div> -->
                 </div>
 
                 <div id="itinerary-list" class="cell is-col-span-4">
@@ -71,8 +43,9 @@
                 
                         <div class="control">
                             <div class="select is-small">
-                                <select required id="Itinerary">
-                                    <option value=" ">Choose an Itinerary</option>
+                                <select required id="choose-itinerary">
+                                    <option value="">Create OR Choose an Itinerary</option>
+                                    <option value="New Itinerary" id="new-itinerary">New Itinerary</option>
                                 </select>
                             </div>
                         </div>
@@ -112,7 +85,18 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLZ7B8ucBo6rIiPh3d7FLGnvwF1vdwj_A&loading=async&callback=initMap">
+    </script> -->
+    <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+          key: "AIzaSyCjlekMaX7PFtdDxlu-g8iOQgTVfAm0k8Q",
+          v: "weekly",
+          // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+          // Add other bootstrap parameters as needed, using camel case.
+        });
+      </script>
     <script src="./assets/js/itinerary.js"></script>
 
 </body>

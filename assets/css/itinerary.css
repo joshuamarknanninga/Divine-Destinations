@@ -30,6 +30,7 @@ main {
 .card {
     
     border-radius: 0%;
+    margin-bottom: .1em
 }
 /* div .card {
     margin-bottom: .1em;
