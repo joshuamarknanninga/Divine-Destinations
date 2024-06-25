@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="/assets/css/hotel.css" />
     <title>Web Design Mastery | Destiny Destinations</title>
 </head>
 
@@ -29,37 +29,45 @@
                 <form>
                     <div class="form__group">
                         <div class="input__group">
-                            <input type="text" id="cityInput" class="border p-2 w-full max-w-md mx-auto mt-2">
-                            <label>Location</label>
+                            <input type="text" id="cityInput" name="location"
+                                class="border p-2 w-full max-w-md mx-auto mt-2" required>
+                            <label for="cityInput">Location</label>
                         </div>
                         <p>Where are you going?</p>
                     </div>
-                    <!-- <div class="form__group">
+                    <div class="form__group">
                         <div class="input__group">
-                            <input type="text" />
+                            <input type="date" id="checkIn" name="check_in_date"
+                                class="border p-2 w-full max-w-md mx-auto mt-2" required>
                             <label>Check In</label>
                         </div>
                         <p>Add date</p>
                     </div>
                     <div class="form__group">
                         <div class="input__group">
-                            <input type="text" />
+                            <input type="date" id="checkOut" name="check_out_date"
+                                class="border p-2 w-full max-w-md mx-auto mt-2" required>
                             <label>Check Out</label>
                         </div>
                         <p>Add date</p>
                     </div>
                     <div class="form__group">
                         <div class="input__group">
-                            <input type="text" />
+                            <input type="text" id="guests" name="adults" class="border p-2 w-full max-w-md mx-auto mt-2"
+                                required>
                             <label>Guests</label>
                         </div>
                         <p>Add guests</p>
-                    </div> -->
+                    </div>
                 </form>
-                <button class="btn"><i class="ri-search-line"></i></button>
+                <button type="submit" class="btn"><i class="ri-search-line"></i></button>
             </div>
         </div>
     </header>
+
+    <!-- Results Container -->
+    <section id="resultsContainer" class="section__container results__container"></section>
+
 
     <section class="section__container popular__container">
         <h2 class="section__header">Popular Hotels</h2>
@@ -169,11 +177,11 @@
             <div class="footer__col">
                 <h3>Destiny Destinations</h3>
                 <p>
-                    Destiny Destinations is a premier hotel booking website that offers a seamless and
+                    Destiny Destinations is a premier destination booking website that offers a seamless and
                     convenient way to find and book accommodations worldwide.
                 </p>
                 <p>
-                    With a user-friendly interface and a vast selection of hotels,
+                    With a user-friendly interface and a vast selection of amazing destinations,
                     Destiny Destinations aims to provide a stress-free experience for travelers
                     seeking the perfect stay.
                 </p>
@@ -203,6 +211,7 @@
             Copyright © 2024 Web Design Mastery. All rights reserved.
         </div>
     </footer>
+    <script src="./assets/js/hotel.js"></script>
 </body>
 
 </html>
