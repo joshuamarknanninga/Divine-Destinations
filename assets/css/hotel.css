@@ -173,13 +173,13 @@ nav {
 }
 
 .booking__container .btn {
-    padding: 1rem;
+    padding: .5rem;
     outline: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--white);
     background-color: var(--primary-color);
-    border-radius: 100%;
+    border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
 }
