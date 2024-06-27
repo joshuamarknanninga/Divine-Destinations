@@ -10,7 +10,7 @@ const chooseItinerary =$('#choose-itinerary')
 
 const itineraries = JSON.parse(localStorage.getItem('itineraries')) || []
 let placesArray = []
-
+let searchResultsArray = []
 
 function getSearchResults(event)
 {
@@ -30,14 +30,15 @@ function getSearchResults(event)
         {
             response.json().then(function(data)
         {
-            displaySearchResults(data.results)
+            searchResultsArray = data.results
+            displaySearchResults()
         })
 
         }
     })
 }
 
-function displaySearchResults(searchResultsArray)
+function displaySearchResults()
 {
     
     searchResults.empty()
@@ -49,22 +50,22 @@ function displaySearchResults(searchResultsArray)
         let saved = false;
         let openNow = 'Closed';
         let saveIconAttr = 'bookmark-outline'
-        
 
         for(let place of placesArray)
         {
-            if (result.name === place)
+            console.log(result)
+            console.log(place)
+            if (result.name === place.name)
             {
-                console.log(result)
-                console.log(place)
+                saved = true
                 saveIconAttr = 'bookmark'
             }
-            else
+            /* else
             {
                 console.log(result)
                 console.log(place)
                 saveIconAttr = 'bookmark-outline'
-            }
+            } */
         }    
         
         if (result.opening_hours.open_now === true)
@@ -88,6 +89,7 @@ function displaySearchResults(searchResultsArray)
         cardHeadertext.attr('class', 'card-header-title')
         saveButton.attr('class', 'card-header-icon')
         saveIconSpan.attr('class', 'icon')
+        
         saveIcon.attr('name', saveIconAttr)
         
 
@@ -114,21 +116,56 @@ function displaySearchResults(searchResultsArray)
         searchResults.append(cardDiv)
 
         saveButton.on('click', function () {
+            console.log('click')
             if (saved === false) {
-                saveIcon.attr('name', 'bookmark')
+                saveIconAttr = 'bookmark'
                 saved = true
                 // savedPlaces.append(cardDiv)
                 placesArray.push(result)
+                console.log(placesArray.indexOf(result))
                 displayItinerary()
+                
 
             }
             else {
-                saveIcon.attr('name', 'bookmark-outline')
+                saveIconAttr = 'bookmark-outline'
                 saved = false
+                const currentItinerary = chooseItinerary.val()
+                    placesArray.splice(findinPlaceArray(result.name),1)
+                    
+                    let itineraryIndex;
+                   
+                    for (let itinerary of itineraries)
+                    {
+                        
+                        if (itinerary.name === currentItinerary)
+                        {
+                            itineraryIndex = itineraries.indexOf(itinerary)
+                        }
+                    }
+                   
+                    itineraries[itineraryIndex].places = placesArray
+        
+                    localStorage.setItem('itineraries', JSON.stringify(itineraries))
+                    displayItinerary()
                 // savedPlaces.remove(cardDiv)
             }
+            saveIcon.attr('name', saveIconAttr)
         })
     }
+}
+
+function findinPlaceArray(find)
+{
+    for (let place in placesArray)
+    {
+        if(place.name === find)
+        {
+            console.log(placesArray.indexOf(place))
+            return placesArray.indexOf(place)
+        }
+    }
+    
 }
 
 function displayItinerary()
@@ -252,6 +289,7 @@ function saveItinerary(event)
         const emptyArray = [];
         placesArray = emptyArray
         itineraryName.attr('disabled', true)
+        chooseItinerary.val('Create OR Choose an Itinerary')
     }
     
 }
@@ -283,11 +321,24 @@ function changeItinerary()
            placesArray = itinerary.places
         }
     }
-    
+
     displayItinerary()
-    //displaySearchResults(searchResultsList)
+    displaySearchResults()
    
 }
+
+/* function changeBookmark(result)
+{
+    let saveIconAttr = 'bookmark-outline'  
+    for (let place of placesArray) {
+        if ( result === place.name) {
+            console.log(result)
+            console.log(place.name)
+            saveIconAttr = 'bookmark'
+        }
+    }
+    return saveIconAttr
+} */
 
 function deleteItinerary(event)
 {
@@ -311,14 +362,55 @@ function deleteItinerary(event)
     localStorage.setItem('itineraries', JSON.stringify(itineraries))
 
     currentItinerary = chooseItinerary.val('New Itinerary')
+    reloadItineraryList()
     changeItinerary()
 
 }
-/* function addPlaces(search)
+
+function reloadItineraryList()
 {
-    const placesArray = []
-    placesArray.push(search)
-    return placesArray
+    // clear all options that are not choose or new
+
+    const options = chooseItinerary[0]
+    const clearedOptions = []
+    
+   /*  const deleteIndex = options.find(removalIndex)
+
+    while(options.length > 2)
+    {
+        options.remove(deleteIndex)
+    } */
+    for (let option of options)
+    {    
+        
+        if (option.label != 'Create OR Choose an Itinerary' && option.label != 'New Itinerary') {
+            
+            clearedOptions.push(option.index)
+        }
+  
+    }
+    for(let i = 0; i < clearedOptions.length;i++)
+    {
+        options.remove(clearedOptions[0])
+    }
+    
+    for(let itinerary of itineraries)
+    {
+        const newOption = $('<option>')
+        newOption.text(itinerary.name)
+        newOption.attr('value', itinerary.name)
+        chooseItinerary.append(newOption)
+    } 
+   
+}
+
+/* function removalIndex(option)
+{
+    if (option.label != 'Create OR Choose an Itinerary' && option.label != 'New Itinerary') {
+            
+        return option.index
+    }
+    
 } */
 
 //displaySearchResults(searchResultsList)
@@ -331,11 +423,17 @@ chooseItinerary.on('change', changeItinerary)
 $(document).ready(function()
 {
     for(let itinerary of itineraries)
-    {
-        const newOption = $('<option>')
-        newOption.text(itinerary.name)
-        newOption.attr('value', itinerary.name)
-        chooseItinerary.append(newOption)
-    }
-
-})
+        {
+            const newOption = $('<option>')
+            newOption.text(itinerary.name)
+            newOption.attr('value', itinerary.name)
+            chooseItinerary.append(newOption)
+        }
+        console.log(chooseItinerary[0][0].label) 
+        console.log(chooseItinerary[0])
+        for(let choice of chooseItinerary[0])
+        {
+            console.log(choice.label)
+        }
+}   
+)
