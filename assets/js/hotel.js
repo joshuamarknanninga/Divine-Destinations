@@ -1,57 +1,61 @@
-// document.addEventListener('DOMContentLoaded', function () {
-    const bookingForm = document.getElementById('bookingForm');
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('searchButton').addEventListener('click', () => {
+      const location = document.getElementById('cityInput').value;
+      const checkin = document.getElementById('checkIn').value;
+      const checkout = document.getElementById('checkOut').value;
+      const guests = document.getElementById('guests').value;
+  
+      if (location && checkin && checkout && guests) {
+        const apiKey = 'a84483dbbd6649e736e9ee99bd6b49a698985bf06677556beefc4d13da0272ad';
+        const apiUrl = `https://corsproxy.io/?https://serpapi.com/search.json?engine=google_hotels&q=${location}&check_in_date=${checkin}&check_out_date=${checkout}&adults=${guests}&currency=USD&gl=us&hl=en&api_key=${apiKey}`;
+        console.log(json);
 
-    bookingForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const location = document.getElementById('cityInput').value;
-        const checkInDate = document.getElementById('checkIn').value;
-        const checkOutDate = document.getElementById('checkOut').value;
-        const guests = document.getElementById('guests').value;
-
-        fetchHotels(location, checkInDate, checkOutDate, guests);
+        fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+            displayResults(data.hotels_results);
+          })
+          .catch(error => console.error('Error fetching data:', error));
+      } else {
+        alert('Please fill in all fields.');
+      }
     });
-
-    async function fetchHotels(location, checkInDate, checkOutDate, guests) {
-        try {
-            const response = await fetch(`https://corsproxy.io/?https://serpapi.com/search.json?engine=google_hotels&q=${location}&check_in_date=${checkInDate}&check_out_date=${checkOutDate}&adults=${guests}&currency=USD&gl=us&hl=en&api_key=a84483dbbd6649e736e9ee99bd6b49a698985bf06677556beefc4d13da0272ad`);
-            const data = await response.json();
-            console.log(data.hotels_results);
-            displayHotels(data.hotels_results);
-        } catch (error) {
-            displayError('Failed to fetch hotel data. Please try again later.');
-        }
-    }
-
-    function displayHotels(hotels) {
-        const resultsContainer = document.getElementById('resultsContainer');
-        resultsContainer.innerHTML = '';
-
-        if (!hotels || hotels.length === 0) {
-            displayError('No hotels found for the given criteria.');
-            return;
-        }
-
+  
+    function displayResults(hotels) {
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = ''; // Clear previous results
+  
+      if (hotels && hotels.length > 0) {
         hotels.forEach(hotel => {
-            const hotelCard = document.createElement('div');
-            hotelCard.classList.add('hotel-card');
-
-            hotelCard.innerHTML = `
-                <img src="${hotel.thumbnail}" alt="${hotel.title}" />
-                <div class="hotel-details">
-                    <h4>${hotel.title}</h4>
-                    <p>${hotel.address}</p>
-                    <p>Rating: ${hotel.rating}</p>
-                    <p>Price: ${hotel.price}</p>
-                </div>
-            `;
-
-            resultsContainer.appendChild(hotelCard);
+          const hotelCard = document.createElement('div');
+          hotelCard.className = 'hotel-card';
+  
+          const hotelImg = document.createElement('img');
+          hotelImg.src = hotel.thumbnail;
+  
+          const hotelDetails = document.createElement('div');
+          hotelDetails.className = 'hotel-details';
+  
+          const hotelName = document.createElement('h4');
+          hotelName.textContent = hotel.name;
+  
+          const hotelRating = document.createElement('p');
+          hotelRating.textContent = `Rating: ${hotel.rating}`;
+  
+          const hotelPrice = document.createElement('p');
+          hotelPrice.textContent = `Price: ${hotel.price}`;
+  
+          hotelDetails.appendChild(hotelName);
+          hotelDetails.appendChild(hotelRating);
+          hotelDetails.appendChild(hotelPrice);
+          hotelCard.appendChild(hotelImg);
+          hotelCard.appendChild(hotelDetails);
+  
+          resultsDiv.appendChild(hotelCard);
         });
+      } else {
+        resultsDiv.innerHTML = '<p>No hotels found for the specified criteria.</p>';
+      }
     }
-
-    function displayError(message) {
-        const resultsContainer = document.getElementById('resultsContainer');
-        resultsContainer.innerHTML = `<p class="error-message">${message}</p>`;
-    }
-// });
+  });
+  

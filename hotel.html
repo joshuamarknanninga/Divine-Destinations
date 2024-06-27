@@ -30,37 +30,33 @@
                 <form id="bookingForm">
                     <div class="form__group">
                         <div class="input__group">
-                            <input type="text" id="cityInput" name="location"
-                                class="border p-2 w-full max-w-md mx-auto mt-2" required>
+                            <input type="text" id="cityInput" name="location" class="border p-2 w-full max-w-md mx-auto mt-2" required>
                             <label for="cityInput">Location</label>
                         </div>
                         <p>Where are you going?</p>
                     </div>
                     <div class="form__group">
                         <div class="input__group">
-                            <input type="date" id="checkIn" name="check_in_date"
-                                class="border p-2 w-full max-w-md mx-auto mt-2" required>
-                            <label>Check In</label>
+                            <label for="checkIn">Check In</label>
+                            <input type="date" id="checkIn" name="check_in_date" class="border p-2 w-full max-w-md mx-auto mt-2" required>
                         </div>
                         <p>Add date</p>
                     </div>
                     <div class="form__group">
                         <div class="input__group">
-                            <input type="date" id="checkOut" name="check_out_date"
-                                class="border p-2 w-full max-w-md mx-auto mt-2" required />
-                            <label>Check Out</label>
+                            <label for="checkOut">Check Out</label>
+                            <input type="date" id="checkOut" name="check_out_date" class="border p-2 w-full max-w-md mx-auto mt-2" required>
                         </div>
                         <p>Add date</p>
                     </div>
                     <div class="form__group">
                         <div class="input__group">
-                            <input type="text" id="guests" name="adults" class="border p-2 w-full max-w-md mx-auto mt-2"
-                                required>
-                            <label>Guests</label>
+                            <label for="guests">Guests</label>
+                            <input type="text" id="guests" name="adults" class="border p-2 w-full max-w-md mx-auto mt-2" required>
                         </div>
                         <p>Add guests</p>
                     </div>
-                    <button type="submit" class="btn"><i class="ri-search-line"></i></button>
+                    <button type="submit" id="searchButton" class="btn"><i class="ri-search-line"></i>Search</button>
                 </form>
             </div>
         </div>
