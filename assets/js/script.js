@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fetchHotels(destination);
             // Add more fetch functions for tourist spots, concert venues, etc.
         }
-    });
+    })});
 
     // Function to fetch weather data
     function fetchWeather(destination) {
@@ -31,15 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to fetch hotel data
-    function fetchHotels(destination) {
-        // Example API call for hotels (replace with actual API)
-        $.ajax({
-            url: `https://api.example.com/hotels?location=${destination}`,
-            method: 'GET',
-            success: function (data) {
-                let hotelsHtml = '';
-                data.hotels.forEach(hotel => {
-                    hotelsHtml += `
-                        <div>
-                            <h3>${hote
+    // // Function to fetch hotel data
+    // function fetchHotels(destination) {
+    //     // Example API call for hotels (replace with actual API)
+    //     $.ajax({
+    //         url: `https://api.example.com/hotels?location=${destination}`,
+    //         method: 'GET',
+    //         success: function (data) {
+    //             let hotelsHtml = '';
+    //             data.hotels.forEach(hotel => {
+    //                 hotelsHtml += `
+    //                     <div>
+    //                         <h3>${hote
