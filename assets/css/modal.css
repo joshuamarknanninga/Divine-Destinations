@@ -1,0 +1,82 @@
+/* body {
+  background-color: #edeef6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vw;
+  margin: 0;
+} */
+
+button.open {
+  background-color: rgb(186, 83, 186);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 10px 25px;
+}
+button.discount {
+  background-color: rgb(85, 156, 10);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 10px 25px;
+}
+button.close {
+  background-color: rgb(169, 169, 169);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 10px 25px;
+}
+
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vw;
+  width: 100vh;
+  transition: 0.3s ease;
+}
+
+.modal-container.show {
+  pointer-events: auto;
+  opacity: 1;
+  width: 100vw;
+  z-index: 1;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px 50px;
+  width: 600px;
+  max-width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal h1 {
+  margin: 0;
+}
+
+.modal p {
+  font-size: 14px;
+  opacity: 0.7;
+  padding: 0 0 8px;
+}
+
+/* button.deals {
+    background-color: black;
+  } */
