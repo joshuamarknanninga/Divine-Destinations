@@ -24,18 +24,21 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   
-    function displayResults(hotels) {
+    function displayResults(hotels = [{}]) {
       const resultsDiv = document.getElementById('results');
       resultsDiv.innerHTML = ''; // Clear previous results
   console.log("hotel", hotels);
 
       if (hotels && hotels.length > 0) {
-        hotels.forEach(hotel => {
+        hotels.forEach((hotel, index) => {
+          console.log(hotel, "current hotel");
           const hotelCard = document.createElement('div');
           hotelCard.className = 'hotel-card';
+          hotelCard.id = 'hotel-id_' + index;
   
           const hotelImg = document.createElement('img');
-          hotelImg.src = hotel.thumbnail;
+          console.log(hotel.images);
+          hotelImg.src = hotel.images[0].thumbnail;
   
           const hotelDetails = document.createElement('div');
           hotelDetails.className = 'hotel-details';
@@ -44,10 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
           hotelName.textContent = hotel.name;
   
           const hotelRating = document.createElement('p');
-          hotelRating.textContent = `Rating: ${hotel.rating}`;
+          // console.log(hotel["overall_rating"]);
+          hotelRating.textContent = `Rating: ${hotel.overall_rating || "No rating."}`;
   
           const hotelPrice = document.createElement('p');
-          hotelPrice.textContent = `Price: ${hotel.price}`;
+          hotelPrice.textContent = `Price: ${hotel.rate_per_night.before_taxes_fees || "Call for rates."}`;
   
           hotelDetails.appendChild(hotelName);
           hotelDetails.appendChild(hotelRating);
