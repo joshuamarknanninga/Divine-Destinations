@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
     // Show the modal on page load
     document.querySelector('#destinationModal').classList.add('is-active');
 
@@ -42,4 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.hotels.forEach(hotel => {
                     hotelsHtml += `
                         <div>
-                            <h3>${hote
+                            <h3>${hote} */
+
+
+$('#searchButton').on('click',search)
