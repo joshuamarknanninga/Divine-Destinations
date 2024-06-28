@@ -15,8 +15,10 @@ let searchResultsArray = []
 function getSearchResults(event)
 {
     event.preventDefault()
-    const lat = 27.9736
-    const lon = -82.7643
+    /* const lat = 27.9736
+    const lon = -82.7643 */
+    const lat = destinationArray[1]
+    const lon = destinationArray[2]
     const rawSearch = searchBar.val().trim()
     const search = rawSearch.replace(" ", "%20")
     
@@ -422,6 +424,9 @@ chooseItinerary.on('change', changeItinerary)
 
 $(document).ready(function()
 {
+    const destName = destinationArray[0]
+    $('#destination').val(destName)
+    
     for(let itinerary of itineraries)
         {
             const newOption = $('<option>')
