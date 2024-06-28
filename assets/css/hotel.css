@@ -7,7 +7,7 @@
     --text-light: #767268;
     --extra-light: #f3f4f6;
     --white: #ffffff;
-    --max-width: 1200px;
+    --max-width: var(--max-width);
 }
 
 * {
@@ -511,3 +511,4 @@ nav {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
