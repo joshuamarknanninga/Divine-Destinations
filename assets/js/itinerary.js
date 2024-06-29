@@ -1,7 +1,3 @@
-
-// let searchResultsList = ['test','test1','test2','test3','test4','test5','test6','test7']
-
-// const selectCategory = $("#place-categories");
 const searchBar = $("#search-bar")
 const itineraryName = $('#itinerary-name')
 const searchResults = $('#search-results')
@@ -14,7 +10,8 @@ let searchResultsArray = []
 
 function getSearchResults(event)
 {
-    event.preventDefault()
+    // event.preventDefault()
+
     /* const lat = 27.9736
     const lon = -82.7643 */
     const lat = destinationArray[1]
@@ -69,11 +66,18 @@ function displaySearchResults()
                 saveIconAttr = 'bookmark-outline'
             } */
         }    
-        
-        if (result.opening_hours.open_now === true)
+        try
         {
-            openNow = 'Open';
+            if (result.opening_hours.open_now === true)
+            {
+                openNow = 'Open';
+            } 
         }
+        catch
+        {
+            openNow = 'Please research opening hours'
+        }
+       
         const cardDiv = $('<div>')
         const cardHeader = $('<header>')
         const cardHeadertext = $('<p>')
@@ -132,10 +136,10 @@ function displaySearchResults()
             else {
                 saveIconAttr = 'bookmark-outline'
                 saved = false
-                const currentItinerary = chooseItinerary.val()
-                    placesArray.splice(findinPlaceArray(result.name),1)
+                // const currentItinerary = chooseItinerary.val()
+                placesArray.splice(findinPlaceArray(result.name),1)
                     
-                    let itineraryIndex;
+               /*      let itineraryIndex;
                    
                     for (let itinerary of itineraries)
                     {
@@ -148,9 +152,9 @@ function displaySearchResults()
                    
                     itineraries[itineraryIndex].places = placesArray
         
-                    localStorage.setItem('itineraries', JSON.stringify(itineraries))
-                    displayItinerary()
-                // savedPlaces.remove(cardDiv)
+                    localStorage.setItem('itineraries', JSON.stringify(itineraries))*/
+                    displayItinerary() 
+                
             }
             saveIcon.attr('name', saveIconAttr)
         })
@@ -159,12 +163,13 @@ function displaySearchResults()
 
 function findinPlaceArray(find)
 {
-    for (let place in placesArray)
+    for (let i = 0; i<placesArray.length;i++)
     {
-        if(place.name === find)
+        console.log(placesArray[i])
+        if(placesArray[i].name === find)
         {
-            console.log(placesArray.indexOf(place))
-            return placesArray.indexOf(place)
+            console.log(placesArray.indexOf(placesArray[i]))
+            return placesArray.indexOf(placesArray[i])
         }
     }
     
@@ -190,10 +195,17 @@ function displayItinerary()
         const address = $('<p>')
         const openNowText = $('<p>')
 
-        if (place.opening_hours.open_now === true)
+        try
+        {
+            if (result.opening_hours.open_now === true)
             {
                 openNow = 'Open';
-            }
+            } 
+        }
+        catch
+        {
+            openNow = 'Please research opening hours'
+        }
     
         cardDiv.attr('class', 'card')
         cardHeader.attr('class', 'card-header')
@@ -209,7 +221,7 @@ function displayItinerary()
             // find name of itinerary, delete the place in that itinerary, update local storage, update places array, display
             const currentItinerary = chooseItinerary.val()
             placesArray.splice(placesArray.indexOf(place),1)
-            let itineraryIndex;
+            /* let itineraryIndex;
            
             for (let itinerary of itineraries)
             {
@@ -222,8 +234,9 @@ function displayItinerary()
            
             itineraries[itineraryIndex].places = placesArray
 
-            localStorage.setItem('itineraries', JSON.stringify(itineraries))
+            localStorage.setItem('itineraries', JSON.stringify(itineraries)) */
             displayItinerary()
+            displaySearchResults()
         })
     
         cardHeadertext.text(place.name)
@@ -270,8 +283,32 @@ function saveItinerary(event)
     }
     else if (takenName() === true)
     {
-        itineraryName.attr('class', 'input control is-expanded is-small is-danger is-focused')
-        itineraryName.val('Itinerary name has been taken. Please enter a new name.')
+        if(itineraryName.attr('disabled'))
+        {
+            const currentItinerary = itineraryName.val()
+            let itineraryIndex;
+           
+            for (let itinerary of itineraries)
+            {
+                
+                if (itinerary.name === currentItinerary)
+                {
+                    itineraryIndex = itineraries.indexOf(itinerary)
+                }
+            }
+           
+            itineraries[itineraryIndex].places = placesArray
+
+            localStorage.setItem('itineraries', JSON.stringify(itineraries))
+            displayItinerary()
+        }
+        else
+        {
+            itineraryName.attr('class', 'input control is-expanded is-small is-danger is-focused')
+            itineraryName.val('')
+            itineraryName.attr('placeholder', 'Itinerary name has been taken')
+        }
+        
     }
     else
     {
@@ -346,7 +383,7 @@ function deleteItinerary(event)
 {
     event.preventDefault()
 
-    let currentItinerary = chooseItinerary.val()
+    let currentItinerary = itineraryName.val()
     let itineraryIndex;
    
     for (let itinerary of itineraries)
@@ -416,7 +453,9 @@ function reloadItineraryList()
 } */
 
 //displaySearchResults(searchResultsList)
-$('#search-button').on('click',getSearchResults)
+$('#search-button').on('click',search)
+// $('#search-button').on('click',getSearchResults)
+
 $('#delete-button').on ('click',deleteItinerary)
 
 $('#save-button').on('click', saveItinerary)
@@ -428,17 +467,16 @@ $(document).ready(function()
     $('#destination').val(destName)
     
     for(let itinerary of itineraries)
-        {
-            const newOption = $('<option>')
-            newOption.text(itinerary.name)
-            newOption.attr('value', itinerary.name)
-            chooseItinerary.append(newOption)
-        }
-        console.log(chooseItinerary[0][0].label) 
-        console.log(chooseItinerary[0])
-        for(let choice of chooseItinerary[0])
-        {
-            console.log(choice.label)
-        }
+    {
+        const newOption = $('<option>')
+        newOption.text(itinerary.name)
+        newOption.attr('value', itinerary.name)
+        chooseItinerary.append(newOption)
+    }
+    console.log(chooseItinerary[0][0].label)
+    console.log(chooseItinerary[0])
+    for (let choice of chooseItinerary[0]) {
+        console.log(choice.label)
+    }
 }   
 )
