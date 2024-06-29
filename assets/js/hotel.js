@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchButton').addEventListener('click', (event) => {
         event.preventDefault();
-      const location = document.getElementById('cityInput').value;
+      const location = document.getElementById('destination').value;
       const checkin = document.getElementById('checkIn').value;
       const checkout = document.getElementById('checkOut').value;
       const guests = document.getElementById('guests').value;
@@ -66,4 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-  
+
+  $(document).ready(function()
+  {
+    const destName = destinationArray[0]
+    $('#destination').val(destName)
+  })
