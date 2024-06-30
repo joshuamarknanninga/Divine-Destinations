@@ -15,6 +15,7 @@ function getSearchResults()
     const rawSearch = searchBar.val().trim()
     const search = rawSearch.replace(" ", "%20")
     
+    // Uses CorsProxy
     fetch(`https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/textsearch/json?location=${lat}%2C${lon}&query=${search}&radius=10000&formatted_phone_number&current_opening_hours&rating&website&key=AIzaSyDLZ7B8ucBo6rIiPh3d7FLGnvwF1vdwj_A`).then(function(response)
     {
         if (response.status === 404)

@@ -14,7 +14,8 @@ To use the hotel page, specify the location you plan to visit (the location will
 To use the itinerary web, search for places, or types of places, that you want to go (the locations will be narrowed down by your destination most recently entered, but it can be changed in the destination search bar). When you click search, the results will be displayed and you can click the bookmark symbol to save the location to your itinerary. After you have created your itinerary, name it and click save. You can create a new itinerary or view an existing itinerary by selecting it in the dropdown menu. You can click the trash can, or the bookmark symbol next to the location in the search results, to delete a location from the itinerary. You can delete an entire itinerary by clicking the delete button above the itinerary list.
 
 ## Credits
-Put sources here in APA…
+Corsproxy (2024). [proxy]. https://corsproxy.io/.
+
 
 ## License
 
