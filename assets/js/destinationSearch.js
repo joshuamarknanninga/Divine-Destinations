@@ -1,3 +1,4 @@
+// Destination array from local storage
 let destinationArray = JSON.parse(localStorage.getItem('destination')) || []
 
 function search(event)
@@ -12,6 +13,7 @@ function search(event)
     }
 }
 
+// Get information from the API, and store the destination, latitude and longitude in local storage
 function fetchFunction()
 {
     const rawSearch = $('#destination').val().trim()
@@ -32,6 +34,8 @@ function fetchFunction()
                 tempArray.push(long)
                 destinationArray = tempArray
                 localStorage.setItem('destination', JSON.stringify(destinationArray))
+
+                // Search for places for the itinerary
                 try
                 {
                     getSearchResults()
