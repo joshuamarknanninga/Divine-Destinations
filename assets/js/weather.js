@@ -1,18 +1,20 @@
 const searchButton  = $('#searchButton')
 const weatherContainer = document.getElementById('weather-info');
 
-    searchButton.on('click', function() {
-
-        modal_container.classList.remove("show");
-
+    searchButton.on('click', cityInfo)
+  
+    function cityInfo()
+    {
+        search()
         const city = document.getElementById('destination').value.trim();
         if (!city) {
-            onsole.log('Please enter a city name');
+            console.log('Please enter a city name');
             return;
         }
+        modal_container.classList.remove("show");
         fetchWeather(city);
-    });
-  
+    }
+    
    /*  document.getElementById('modalCloseButton').addEventListener('click', hideModal);
     document.getElementById('modalCloseFooterButton').addEventListener('click', hideModal); */
     
@@ -46,4 +48,8 @@ const weatherContainer = document.getElementById('weather-info');
             </div>
         `;
         weatherContainer.innerHTML += weatherCard;
+
+        const welcomeHeader = $('#welcomeHeader')
+        
+        welcomeHeader.text(`Welcome to ${data.city.name}`)
     }

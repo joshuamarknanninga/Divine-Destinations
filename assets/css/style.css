@@ -38,6 +38,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
 nav {
   max-width: var(--max-width);
   margin: auto;

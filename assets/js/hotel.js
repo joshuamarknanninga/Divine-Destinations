@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchButton').addEventListener('click', (event) => {
         event.preventDefault();
       const location = document.getElementById('destination').value;
+      fetchFunction()
       const checkin = document.getElementById('checkIn').value;
       const checkout = document.getElementById('checkOut').value;
       const guests = document.getElementById('guests').value;
