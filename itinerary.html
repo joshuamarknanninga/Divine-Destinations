@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/itinerary.css"/>
-    <title>Itineraries</title>
+    <title>Divine Destinations | Itineraries</title>
 </head>
 <body>
     
      <!-- Navbar -->
-     <nav class="navbar is-dark">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="#">Divine Destination</a>
-            <div class="navbar-burger burger" data-target="navbarMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+     <nav>
+        <div class="nav__logo"><a href="./index.html">Divine Destinations</a></div>
+        <ul class="nav__links">
+            <li class="link"><a class="nav-item nav-link" href="../hotel.html">Hotels</a></li>
+            <li class="link"><a class="nav-item nav-link" href="../itinerary.html">Itinerary</a></li>
+        </ul> 
+    </nav>   
 
-    </nav>
+    <!--  <nav>
+        <div class="nav__logo"><a href="#">Divine Destinations</a></div>
+        <ul class="nav__links">
+            <li class="link"><a class="nav-item nav-link" href="../hotel.html">Hotels</a></li>
+            <li class="link"><a class="nav-item nav-link" href="../itinerary.html">Itinerary</a></li>
+        </ul> 
+    </nav>  -->  
 
     <main>
         <div class="fixed-grid has-12-cols m-3">
@@ -86,15 +90,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <!-- <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLZ7B8ucBo6rIiPh3d7FLGnvwF1vdwj_A&loading=async&callback=initMap">
-    </script> -->
     <script>
         (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
           key: "AIzaSyCjlekMaX7PFtdDxlu-g8iOQgTVfAm0k8Q",
           v: "weekly",
-          // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-          // Add other bootstrap parameters as needed, using camel case.
         });
       </script>
     <script src="./assets/js/destinationSearch.js"></script>  

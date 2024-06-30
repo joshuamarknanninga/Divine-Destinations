@@ -2,8 +2,18 @@ let destinationArray = JSON.parse(localStorage.getItem('destination')) || []
 
 function search(event)
 {
-  event.preventDefault()
+    try{
+        event.preventDefault()
     
+        fetchFunction()
+    }
+    catch{
+        fetchFunction()
+    }
+}
+
+function fetchFunction()
+{
     const rawSearch = $('#destination').val().trim()
     const search = rawSearch.replace(" ", "%20")
     fetch(`https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/textsearch/json?&query=${search}&radius=10000&formatted_phone_number&current_opening_hours&rating&website&key=AIzaSyDLZ7B8ucBo6rIiPh3d7FLGnvwF1vdwj_A`).then(function (response) {

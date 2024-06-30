@@ -8,17 +8,14 @@ const itineraries = JSON.parse(localStorage.getItem('itineraries')) || []
 let placesArray = []
 let searchResultsArray = []
 
-function getSearchResults(event)
+function getSearchResults()
 {
-    // event.preventDefault()
-
-    /* const lat = 27.9736
-    const lon = -82.7643 */
     const lat = destinationArray[1]
     const lon = destinationArray[2]
     const rawSearch = searchBar.val().trim()
     const search = rawSearch.replace(" ", "%20")
     
+    // Uses CorsProxy
     fetch(`https://corsproxy.io/?https://maps.googleapis.com/maps/api/place/textsearch/json?location=${lat}%2C${lon}&query=${search}&radius=10000&formatted_phone_number&current_opening_hours&rating&website&key=AIzaSyDLZ7B8ucBo6rIiPh3d7FLGnvwF1vdwj_A`).then(function(response)
     {
         if (response.status === 404)
@@ -59,12 +56,6 @@ function displaySearchResults()
                 saved = true
                 saveIconAttr = 'bookmark'
             }
-            /* else
-            {
-                console.log(result)
-                console.log(place)
-                saveIconAttr = 'bookmark-outline'
-            } */
         }    
         try
         {
@@ -126,7 +117,6 @@ function displaySearchResults()
             if (saved === false) {
                 saveIconAttr = 'bookmark'
                 saved = true
-                // savedPlaces.append(cardDiv)
                 placesArray.push(result)
                 console.log(placesArray.indexOf(result))
                 displayItinerary()
@@ -136,23 +126,7 @@ function displaySearchResults()
             else {
                 saveIconAttr = 'bookmark-outline'
                 saved = false
-                // const currentItinerary = chooseItinerary.val()
                 placesArray.splice(findinPlaceArray(result.name),1)
-                    
-               /*      let itineraryIndex;
-                   
-                    for (let itinerary of itineraries)
-                    {
-                        
-                        if (itinerary.name === currentItinerary)
-                        {
-                            itineraryIndex = itineraries.indexOf(itinerary)
-                        }
-                    }
-                   
-                    itineraries[itineraryIndex].places = placesArray
-        
-                    localStorage.setItem('itineraries', JSON.stringify(itineraries))*/
                     displayItinerary() 
                 
             }
@@ -177,12 +151,11 @@ function findinPlaceArray(find)
 
 function displayItinerary()
 {
-    // savedPlaces.attr('style', 'overflow-y: scroll;')
+    savedPlaces.attr('style', 'overflow-y: scroll;')
     savedPlaces.empty()
     let openNow = 'Closed';
     for (let place of placesArray)
     {
-        // let saved = false;
         const cardDiv = $('<div>')
         const cardHeader = $('<header>')
         const cardHeadertext = $('<p>')
@@ -219,22 +192,7 @@ function displayItinerary()
         deleteButton.on('click', function(){
 
             // find name of itinerary, delete the place in that itinerary, update local storage, update places array, display
-            const currentItinerary = chooseItinerary.val()
             placesArray.splice(placesArray.indexOf(place),1)
-            /* let itineraryIndex;
-           
-            for (let itinerary of itineraries)
-            {
-                
-                if (itinerary.name === currentItinerary)
-                {
-                    itineraryIndex = itineraries.indexOf(itinerary)
-                }
-            }
-           
-            itineraries[itineraryIndex].places = placesArray
-
-            localStorage.setItem('itineraries', JSON.stringify(itineraries)) */
             displayItinerary()
             displaySearchResults()
         })
@@ -325,8 +283,6 @@ function saveItinerary(event)
         newOption.text(itinerary.name)
         newOption.attr('value', itinerary.name)
         chooseItinerary.append(newOption)
-        const emptyArray = [];
-        placesArray = emptyArray
         itineraryName.attr('disabled', true)
         chooseItinerary.val('Create OR Choose an Itinerary')
     }
@@ -366,18 +322,6 @@ function changeItinerary()
    
 }
 
-/* function changeBookmark(result)
-{
-    let saveIconAttr = 'bookmark-outline'  
-    for (let place of placesArray) {
-        if ( result === place.name) {
-            console.log(result)
-            console.log(place.name)
-            saveIconAttr = 'bookmark'
-        }
-    }
-    return saveIconAttr
-} */
 
 function deleteItinerary(event)
 {
@@ -442,22 +386,8 @@ function reloadItineraryList()
     } 
    
 }
-
-/* function removalIndex(option)
-{
-    if (option.label != 'Create OR Choose an Itinerary' && option.label != 'New Itinerary') {
-            
-        return option.index
-    }
-    
-} */
-
-//displaySearchResults(searchResultsList)
 $('#search-button').on('click',search)
-// $('#search-button').on('click',getSearchResults)
-
 $('#delete-button').on ('click',deleteItinerary)
-
 $('#save-button').on('click', saveItinerary)
 chooseItinerary.on('change', changeItinerary)
 

@@ -1,127 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Divine Destination - Travel Planner App</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
+    <link rel="stylesheet" href="./assets/css/modal.css"/>
+    <title>Destiny Destinations | Home</title>
+</head>
 
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar is-dark">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="#">Divine Destination</a>
-        <div class="navbar-burger burger" data-target="navbarMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
+<body>
+    
+    <nav>
+        <div class="nav__logo"><a href="#">Divine Destinations</a></div>
+        <ul class="nav__links">
+            <li class="link"><a class="nav-item nav-link" href="../hotel.html">Hotels</a></li>
+            <li class="link"><a class="nav-item nav-link" href="../itinerary.html">Itinerary</a></li>
+        </ul> 
+    </nav>   
+ <!-- MODAL -->
+ <div class="modal-container" id="modal_container">
+   <div class="modal">
+    <header>
+        <h1>What is your Destination</h1>
+        <button class="close" id="close"><ion-icon name="close-outline"></ion-icon></button>
+    </header>
+     
+     <form >
+        <input class="input control is-expanded" type="text" placeholder="Ex. Clearwater, FL" id="destination">
+     </form>
+     <button class="search" id="searchButton">Search</button>
+     
+   </div>
+ </div>
+</ul>
+</nav>
+    <h2 id="welcomeHeader"></h2>
+    <div id="weather-info">
+        
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero is-primary is-bold">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">Plan Your Perfect Trip</h1>
-          <p class="subtitle">All the information you need in one place</p>
-          <p class="subtitle">
-            User Story: As a traveler, I want to look for a website that can
-            give me substantial information that will prepare me for travel so
-            that I will have a good experience.
-          </p>
-        </div>
-      </div>
-    </section>
+        <a class="nav-item nav-link linkToPage" href="../hotel.html">Hotels</a>
 
-    <main>
-      <div id="searchBar" class="m-3">
-        <div class="field has-addons">
-          <div class="control is-expanded">
-            <input
-              type="text"
-              id="city"
-              placeholder="Enter city"
-              class="input"
-            />
-          </div>
+        <a class="nav-item nav-link linkToPage" href="../itinerary.html">Itinerary</a>
 
-          <div class="control">
-            <button class="button" id="searchButton">Search</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Weather Section -->
-      <section id="weather" class="section">
-        <div class="container">
-          <h2 class="title">Weather</h2>
-          <div id="weather-info"></div>
-        </div>
-      </section>
-
-      <!-- Modal Structure -->
-      <div class="modal" id="alertModal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Alert</p>
-            <button
-              class="delete"
-              aria-label="close"
-              id="modalCloseButton"
-            ></button>
-          </header>
-          <section class="modal-card-body">
-            <p id="modalMessage"></p>
-          </section>
-          <footer class="modal-card-foot">
-            <button class="button" id="modalCloseFooterButton">Close</button>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- Hotels -->
-
-      <section id="hotels" class="section">
-        <div class="container">
-          <h2 class="title">Tourist Spots</h2>
-          <div id="hotel-preview"></div>
-
-          <button class="button" id="hotelSearch">Search for Hotels</button>
-        </div>
-      </section>
-
-      <!-- Create Itinerary-->
-
-      <section id="FeaturedDestinations" class="section">
-        <div class="container">
-          <h2 class="title">Local Concert Venues</h2>
-          <div id="destinations-preview"></div>
-
-          <button class="button">New Itinerary</button>
-          <button class="button">Edit Itinerary</button>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
     <footer class="footer">
-      <div class="content has-text-centered">
-        <p>&copy; 2024 Divine Destination. All rights reserved.</p>
-      </div>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <h3>Destiny Destinations</h3>
+                <p>
+                    Destiny Destinations is a premier destination booking website that offers a seamless and
+                    convenient way to find and book accommodations worldwide.
+                </p>
+                <p>
+                    With a user-friendly interface and a vast selection of amazing destinations,
+                    Destiny Destinations aims to provide a stress-free experience for travelers
+                    seeking the perfect stay.
+                </p>
+            </div>
+            <div class="footer__col">
+                <h4>Company</h4>
+                <p>About Us</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="footer__col">
+                <h4>Legal</h4>
+                <p>FAQs</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 Web Design Mastery. All rights reserved.
+        </div>
     </footer>
-
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="./assets/js/destinationSearch.js"></script>
+    <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/weather.js"></script>
 
-    <!-- UNCOMMENT LATER!! -->
-    <!-- <script src="./assets/js/script.js"></script> -->
-  </body>
+</body>
+
 </html>
