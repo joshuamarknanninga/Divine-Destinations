@@ -84,6 +84,9 @@ main {
 #search-results {
    height: 90vh;
 } 
+#saved-places {
+  height: 81vh;
+}
 
 .grid {
     height: 100vh;
