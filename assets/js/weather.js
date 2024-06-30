@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
           </div>
       `;
-      weatherContainer.innerHTML += weatherCard;
+      weatherContainer.innerHTML += weatherCard; 
   }
 
   function showModal(message) {
