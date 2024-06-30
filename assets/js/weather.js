@@ -15,9 +15,6 @@ const weatherContainer = document.getElementById('weather-info');
         fetchWeather(city);
     }
     
-   /*  document.getElementById('modalCloseButton').addEventListener('click', hideModal);
-    document.getElementById('modalCloseFooterButton').addEventListener('click', hideModal); */
-    
     function fetchWeather(city) {
         const apiKey = 'f9806558f939df933af650d90d674b86';
         $.ajax({

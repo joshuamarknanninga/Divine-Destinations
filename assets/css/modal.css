@@ -29,11 +29,7 @@ button.search {
 button.close {
   background-color: #ffffff;
     color: black;
-    /* border: 0; */
-    /* border-radius: 5px; */
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
     font-size: 14px;
-    /* padding: 10px 25px; */
     border: none;
     position: relative;
     bottom: 12vh;
@@ -92,7 +88,3 @@ button.close {
   opacity: 0.7;
   padding: 0 0 8px;
 }
-
-/* button.deals {
-    background-color: black;
-  } */
