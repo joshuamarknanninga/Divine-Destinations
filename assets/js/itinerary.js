@@ -325,8 +325,6 @@ function saveItinerary(event)
         newOption.text(itinerary.name)
         newOption.attr('value', itinerary.name)
         chooseItinerary.append(newOption)
-        const emptyArray = [];
-        placesArray = emptyArray
         itineraryName.attr('disabled', true)
         chooseItinerary.val('Create OR Choose an Itinerary')
     }
