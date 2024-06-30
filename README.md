@@ -16,6 +16,9 @@ To use the itinerary web, search for places, or types of places, that you want t
 ## Credits
 Corsproxy (2024). [proxy]. https://corsproxy.io/.
 
+Web Design Mastery. (2023, August 7). How to Create a Hotel Booking Website [Video]. YouTube. https://youtu.be/SVLR5XVTGj0?si=yqsriCMKE9bPiiCg
+
+Web Design Mastery. (2023). WDM-Co_07-07-23 [GitHub repository]. https://github.com/WebDesignMastery/WDM-Co_07-07-23
 
 ## License
 
