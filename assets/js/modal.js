@@ -1,16 +1,13 @@
-const searchBar = $('#destination')
-searchBar.attr('style', 'color: #000000')
-const modal_container = document.getElementById("modal_container");
-const close = document.getElementById("close");
+const open = document.getElementById("open");
+const discount_modal_container = document.getElementById(
+  "discount_modal_container"
+);
+const discount_close = document.getElementById("discount_close");
 
-
-window.addEventListener("load", () => {
-  modal_container.classList.add("show");
-  searchBar.val(destinationArray[0])
+open.addEventListener("click", () => {
+  discount_modal_container.classList.add("show");
 });
 
-close.addEventListener("click", () => {
-  modal_container.classList.remove("show");
-  searchBar.val(destinationArray[0])
-  cityInfo()
+discount_close.addEventListener("click", () => {
+  discount_modal_container.classList.remove("show");
 });

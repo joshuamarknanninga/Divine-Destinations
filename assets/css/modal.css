@@ -16,7 +16,7 @@ button.open {
   font-size: 14px;
   padding: 10px 25px;
 }
-button.search {
+button.discount {
   background-color: rgb(85, 156, 10);
   color: white;
   border: 0;
@@ -26,14 +26,15 @@ button.search {
   padding: 10px 25px;
   margin-top: 3vh;
 }
-button.close {
-  background-color: #ffffff;
-    color: black;
-    font-size: 14px;
-    border: none;
-    position: relative;
-    bottom: 12vh;
-    left: 47vh;
+button.discount-close {
+  background-color: grey;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 10px 10px;
+  margin-top: 3vh;
 }
 
 #destination {
@@ -45,7 +46,7 @@ button.close {
   padding: 10px 25px;
 }
 
-.modal-container {
+.discount-modal-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,14 +61,14 @@ button.close {
   transition: 0.3s ease;
 }
 
-.modal-container.show {
+.discount-modal-container.show {
   pointer-events: auto;
   opacity: 1;
   width: 100vw;
-  z-index: 1;
+  z-index: 2;
 }
 
-.modal {
+.discount-modal {
   background-color: white;
   border-radius: 5px;
   padding: 30px 50px;
@@ -79,11 +80,11 @@ button.close {
   position: relative;
 }
 
-.modal h1 {
-  margin: 0;
+.discount-modal h1 {
+  margin: 0 0 15px;
 }
 
-.modal p {
+.discount-modal p {
   font-size: 14px;
   opacity: 0.7;
   padding: 0 0 8px;
