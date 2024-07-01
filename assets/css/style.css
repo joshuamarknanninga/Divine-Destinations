@@ -1,3 +1,4 @@
+/*Web Design Mastery begins*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 :root {
@@ -76,7 +77,9 @@ a {
   justify-content: center;
   background-color: aliceblue;
 }
+/*Web Design Mastery content ends*/
 
+/*Styling for the links in the main part of the page */
 .linkToPage
 {
   background-color: rgba(255, 255, 255, 0.702);
@@ -90,6 +93,8 @@ a {
   box-shadow: 5px 5px 12px var(--text-light);
 
 }
+
+/**Web Design Mastery footer and media queries*/
 .footer {
   background-color: var(--extra-light);
 }
@@ -148,64 +153,7 @@ a {
   background-color: var(--text-light);
 }
 
-/* Styles for the results container */
-.results__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.hotel-card {
-  background-color: var(--white);
-  border-radius: 1rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.hotel-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.hotel-details {
-  padding: 1rem;
-}
-
-.hotel-details h4 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-dark);
-}
-
-.hotel-details p {
-  color: var(--text-light);
-  margin-bottom: 0.5rem;
-}
-
-/* Styles for error message */
-.error-message {
-  color: red;
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
 @media (width < 900px) {
-  .booking__container form {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .popular__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .client__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
 
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
@@ -221,97 +169,17 @@ a {
     padding-bottom: 25rem;
   }
 
-  .booking__container {
-    flex-direction: column;
-    bottom: -25rem;
-  }
-
-  .booking__container form {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .popular__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .client__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
   .footer__container {
     gap: 2rem;
   }
 }
 
-/* Existing CSS */
-/* Add new styles at the end */
-
-/* Styles for the results container */
-.results__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.hotel-card {
-  background-color: var(--white);
-  border-radius: 1rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.hotel-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.hotel-details {
-  padding: 1rem;
-}
-
-.hotel-details h4 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-dark);
-}
-
-.hotel-details p {
-  color: var(--text-light);
-  margin-bottom: 0.5rem;
-}
-
-/* Styles for error message */
-.error-message {
-  color: red;
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
 @media (max-width: 900px) {
-  .booking__container form {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .popular__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .client__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
 
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .results__container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 600px) {
@@ -323,28 +191,8 @@ a {
     padding-bottom: 25rem;
   }
 
-  .booking__container {
-    flex-direction: column;
-    bottom: -25rem;
-  }
-
-  .booking__container form {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .popular__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .client__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
   .footer__container {
     gap: 2rem;
   }
 
-  .results__container {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }

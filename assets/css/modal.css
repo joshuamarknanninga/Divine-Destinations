@@ -1,21 +1,4 @@
-/* body {
-  background-color: #edeef6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vw;
-  margin: 0;
-} */
-
-button.open {
-  background-color: rgb(186, 83, 186);
-  color: white;
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  font-size: 14px;
-  padding: 10px 25px;
-}
+/*Styling of modal search button*/
 button.search {
   background-color: rgb(85, 156, 10);
   color: white;
@@ -26,18 +9,21 @@ button.search {
   padding: 10px 25px;
   margin-top: 3vh;
 }
+
+/*Close button*/
 button.close {
   background-color: #ffffff;
-    color: black;
-    font-size: 14px;
-    border: none;
-    position: relative;
-    bottom: 12vh;
-    left: 47vh;
+  color: black;
+  font-size: 14px;
+  border: none;
+  position: relative;
+  bottom: 12vh;
+  left: 47vh;
 }
 
+/*Search bar*/
 #destination {
-  color: white;
+  color: black;
   border: 0;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -45,6 +31,7 @@ button.close {
   padding: 10px 25px;
 }
 
+/*Modal*/
 .modal-container {
   display: flex;
   align-items: center;
