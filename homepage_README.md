@@ -22,7 +22,7 @@ Divine Destinations is a comprehensive travel planner webpage designed to provid
 - **Modal Popup**: A sliding modal that offers exclusive deals once clicked in the top right corner, which includes:
   -  grey button to close the modal and dull to 'hide' & discourage clicking.
   -  bright green button to grab attention and navigate to the pricing page (not created).
-  - Includes black transparent background that light 'blocks' out the homepage to shift the focus on the modal; slides to the left side of the screen upon close. 
+  - Includes black transparent background that light 'blocks' out the homepage to shift the focus on the modal; slides to the left side of the screen upon close. A slight animation with the slide in and out of the window screen. 
 - **Real-time Weather Updates**: A section under the hero that provides users with the latest weather information for their travel destination once typed in.
 - **Popular Hotels Section**: Displays the current top-rated hotels with images, locations, and prices.
 - **Client Testimonials**: Showcases positive feedback from satisfied clients.
@@ -102,6 +102,8 @@ Joshua Nanninga,
 Nolyn Adis Bobic,
 Taylor Tilney,
 Melyana Lie
+
+Pop, Florin. (2020). Modal Popup Animation. (https://www.youtube.com/watch?v=XH5OW46yO8I)
 
 ## Contact
 
