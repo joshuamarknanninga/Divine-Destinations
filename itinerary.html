@@ -9,8 +9,8 @@
 </head>
 <body>
     
-     <!-- Navbar -->
-     <nav>
+    <!-- Navbar -->
+    <nav>
         <div class="nav__logo"><a href="./index.html">Divine Destinations</a></div>
         <ul class="nav__links">
             <li class="link"><a class="nav-item nav-link" href="../hotel.html">Hotels</a></li>
@@ -18,17 +18,11 @@
         </ul> 
     </nav>   
 
-    <!--  <nav>
-        <div class="nav__logo"><a href="#">Divine Destinations</a></div>
-        <ul class="nav__links">
-            <li class="link"><a class="nav-item nav-link" href="../hotel.html">Hotels</a></li>
-            <li class="link"><a class="nav-item nav-link" href="../itinerary.html">Itinerary</a></li>
-        </ul> 
-    </nav>  -->  
-
+    <!--Main Content-->
     <main>
         <div class="fixed-grid has-12-cols m-3">
             <div class="grid">
+                <!--Form to input your destination and places to visit while you're there-->
                 <form id="place-search" class="cell is-col-span-12 field is-grouped">
 
                     <input class="input control is-expanded" type="text" placeholder="Destination" id="destination">
@@ -38,13 +32,16 @@
   
                 </form>
 
+                <!--Where results will be generated-->
                 <div id="search-results" class="cell is-col-span-8">
-                    <p>Results</p>
+                    
                 </div>
 
+                <!--Itinerary section-->
                 <div id="itinerary-list" class="cell is-col-span-4">
                     <form id="itinerary-form" class=" field is-horizontal">
                 
+                        <!--Itinerary dropdown-->
                         <div class="control">
                             <div class="select is-small">
                                 <select required id="choose-itinerary">
@@ -52,23 +49,28 @@
                                     <option id="new-itinerary">New Itinerary</option>
                                 </select>
                             </div>
+                            
+                            <!--Input for the itinerary name-->
+
+                            <div class="control">
+                                <input class="input control is-expanded is-small" type="text" placeholder="Name your Itinerary"
+                                id="itinerary-name">
+                            </div>
                         </div>
                 
-                        <div class="control">
-                            <input class="input control is-expanded is-small" type="text" placeholder="Name your Itinerary"
-                            id="itinerary-name">
-                        </div>
-                
+                        <!--Delete itinerary button-->
                         <div class="control">
                             <button class="button is-small mb-3" id="delete-button">Delete Itinerary</button>
                         </div>
                 
+                        <!--Save itinerary button-->
                         <div class="control">
                             <button class="button is-small mb-3" id="save-button">Save</button>
                         </div>
                 
                     </form>
 
+                    <!--Where the list of places on your itinerary will be generated-->
                     <div id="saved-places">
 
                     </div>
@@ -81,8 +83,33 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="content has-text-centered">
-            <p>&copy; 2024 Divine Destination. All rights reserved.</p>
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <h3>Destiny Destinations</h3>
+                <p>
+                    Destiny Destinations is a premier destination booking website that offers a seamless and
+                    convenient way to find and book accommodations worldwide.
+                </p>
+                <p>
+                    With a user-friendly interface and a vast selection of amazing destinations,
+                    Destiny Destinations aims to provide a stress-free experience for travelers
+                    seeking the perfect stay.
+                </p>
+            </div>
+            <div class="footer__col">
+                <h4>Company</h4>
+                <p>About Us</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="footer__col">
+                <h4>Legal</h4>
+                <p>FAQs</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 Web Design Mastery. All rights reserved.
         </div>
     </footer>
 

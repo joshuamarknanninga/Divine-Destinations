@@ -8,7 +8,7 @@
 } */
 
 button.open {
-  background-color: rgb(186, 83, 186);
+  background-color: hsla(198, 100%, 70%, 1);
   color: white;
   border: 0;
   border-radius: 5px;
@@ -65,7 +65,7 @@ button.discount-close {
   pointer-events: auto;
   opacity: 1;
   width: 100vw;
-  z-index: 2;
+  z-index: 8;
 }
 
 .discount-modal {

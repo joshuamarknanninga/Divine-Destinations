@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="nav_background" class="nav_background">
         <div class="nav__logo" href="../home.html">Divine Destinations</div>
         <ul class="nav__links">
             <!-- <li class="link"><a href="#">Home</a></li> -->
@@ -45,10 +45,10 @@
     <header class="section__container header__container">
         <div class="home__image__container">
             <img src="/assets/images/family-beach.jpg" alt="Family on beach">
-            <div class="header__content">
+            <div class="header__content" id="header__content">
                 <h1>Where Dream Vacations Come to Life</h1>
-                <p>Book flights, hotels, and create your perfect day in the one-stop travel planner app that meets all your needs with available weather updates at your fingertips.</p>
-            <button class="hero_button" id="hero_button">TEST</button>
+                <p id="hero_text" class="hero_text">Book flights, hotels, and create your perfect day in the one-stop travel planner app that meets all your needs with available weather updates at your fingertips.</p>
+            <button class="hero_button" id="hero_button">Book Now</button>
             </div>
         </div>
     </header>
@@ -131,14 +131,13 @@
 
 
         <!-- WEATHER SECTION -->
-        <section class="weather-section">
+         <section class="weather-section">
             <div class="weather-container">
               <h1 class="weather-heading">Stay Ahead with Real-Time Weather Updates</h1>
               <p class="weather-subtitle">Know before you go! Get the latest weather updates for your destination.</p>
               <div id="weather-widget" class="weather-widget">
                 <body class="weatherAP" id="weatherAP">
                     <div class="weatherAP-container" id="weatherAP-container">
-                      <h2>???</h2>
                       <input type="text" id="weatherCity" placeholder="Enter City"/>
                       <button class="weatherAP_Button", onclick="getWeather()">Search</button>
                         
@@ -155,11 +154,15 @@
                 
                         </div>
                     </div>
-                    <script src=".assets/js/weather.js"></script>
+                    <script src=".assets/js/weatherAP.js"></script>
                   </body>
               </div>
             </div>
           </section>          
+
+
+          <!-- Weather Two -->
+
 
     <!-- HOTELS SECTION -->
 
@@ -168,7 +171,7 @@
         <p class="popHotels-subtitle">Discover Top-Rated Stays for Your Perfect Getaway</p>
         <div class="popular__grid">
             <div class="popular__card">
-                <img src="assets/hotel-1.jpg" alt="popular hotel" />
+                <img src="assets/images/hotel-5.jpg" alt="popular hotel" />
                 <div class="popular__content">
                     <div class="popular__card__header">
                         <h4>El Cosmico</h4>
@@ -178,7 +181,7 @@
                 </div>
             </div>
             <div class="popular__card">
-                <img src="assets/hotel-2.jpg" alt="popular hotel" />
+                <img src="assets/images/hotel-6.jpg" alt="popular hotel" />
                 <div class="popular__content">
                     <div class="popular__card__header">
                         <h4>Madonna Inn</h4>
@@ -188,7 +191,7 @@
                 </div>
             </div>
             <div class="popular__card">
-                <img src="assets/hotel-3.jpg" alt="popular hotel" />
+                <img src="assets/images/hotel-5.jpg" alt="popular hotel" />
                 <div class="popular__content">
                     <div class="popular__card__header">
                         <h4>The Shady Dell</h4>
@@ -198,7 +201,7 @@
                 </div>
             </div>
             <div class="popular__card">
-                <img src="assets/hotel-4.jpg" alt="popular hotel" />
+                <img src="assets/images/hotel-6.jpg" alt="popular hotel" />
                 <div class="popular__content">
                     <div class="popular__card__header">
                         <h4>Kate's Lazy Meadow Motel</h4>
@@ -208,7 +211,7 @@
                 </div>
             </div>
             <div class="popular__card">
-                <img src="assets/hotel-5.jpg" alt="popular hotel" />
+                <img src="assets/images/hotel-5.jpg" alt="popular hotel" />
                 <div class="popular__content">
                     <div class="popular__card__header">
                         <h4>The Vintages Trailer Resort</h4>
@@ -218,7 +221,7 @@
                 </div>
             </div>
             <div class="popular__card">
-                <img src="assets/hotel-6.jpg" alt="popular hotel" />
+                <img src="assets/images/hotel-6.jpg" alt="popular hotel" />
                 <div class="popular__content">
                     <div class="popular__card__header">
                         <h4>Hicksville Trailer Palace</h4>
@@ -232,24 +235,25 @@
 
     <section class="client">
         <div class="section__container client__container">
-            <h2 class="section__header">What our clients say</h2>
+            <h2 class="section__header">What our Clients say</h2>
+            <p class="testimonies-subtitle">Discover the journeys of our satisfied travelers and their unforgettable experiences</p>
             <div class="client__grid">
                 <div class="client__card">
-                    <img src="assets/client-1.jpeg" alt="client" />
+                    <img src="assets/images/client-2.jpg" alt="client" />
                     <p>
                         The booking process was seamless, and the confirmation was
                         instant. I highly recommend Destiny Destinations for hassle-free hotel bookings.
                     </p>
                 </div>
                 <div class="client__card">
-                    <img src="assets/client-2.jpeg" alt="client" />
+                    <img src="assets/images/client-2.jpg" alt="client" />
                     <p>
                         The website provided detailed information about hotel, including
                         amenities, photos, which helped me make an informed decision.
                     </p>
                 </div>
                 <div class="client__card">
-                    <img src="assets/client-3.jpeg" alt="client" />
+                    <img src="assets/images/client-2.jpg" alt="client" />
                     <p>
                         I was able to book a room within minutes, and the hotel exceeded
                         my expectations. I appreciate Destiny Destinations's efficiency and reliability.
@@ -259,11 +263,11 @@
         </div>
     </section>
 
-     <section class="section__container">
-      <div class="reward__container">
-        <p>100+ discount codes</p>
+     <section class="rewardSection__container"  id="rewardSection__container">
+      <div class="reward__container" id="reward__container">
+        <h2>Rewards Program</h2>
         <h4>Join rewards and discover amazing discounts on your booking</h4>
-        <button class="reward__btn">Join Rewards</button>
+        <button class="reward__btn" id="reward__btn">Join Rewards</button>
       </div>
     </section>
 

@@ -1,5 +1,7 @@
+/*Web Design Mastery header*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
+/*Variables*/
 :root {
   --primary-color: #2c3855;
   --primary-color-dark: #435681;
@@ -8,6 +10,12 @@
   --extra-light: #f3f4f6;
   --white: #ffffff;
   --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .section__container {
@@ -32,6 +40,7 @@ h2 {
   justify-content: center;
 }
 
+/*Navigation*/
 nav {
   max-width: var(--max-width);
   margin: auto;
@@ -47,6 +56,7 @@ nav {
   color: var(--text-dark);
 }
 
+/*Link styling*/
 .nav__links {
   list-style: none;
   display: flex;
@@ -67,46 +77,46 @@ a {
 
 
 /*Content*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 main {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
+/*Search bars*/
 #place-search {
-    height: 7vh;
+  height: 7vh;
 }
 
+/*Search results*/
 #search-results {
-   height: 90vh;
+  height: 90vh;
 } 
+
+/*Itinerary section*/
 #saved-places {
   height: 81vh;
 }
 
 .grid {
-    height: 100vh;
+  height: 100vh;
 }
 
+/*Card styling*/
 .card {
     
-    border-radius: 0%;
-    margin-bottom: .1em
+  border-radius: 0%;
+  margin-bottom: .1em
 }
 
 .card-header {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .content {
-    padding: 0 0 1em 1em;
+  padding: 0 0 1em 1em;
 }
 
-/*Footer*/
+/*Web Design Mastery footer*/
 .footer {
     background-color: var(--extra-light);
   }

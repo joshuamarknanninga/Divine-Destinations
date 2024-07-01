@@ -173,71 +173,11 @@ a {
     background-color: var(--primary-color-dark);
 }
 
-/* .popular__grid {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
+/* 
+    The styles for the navigation bar, header, and booking container were adapted from the WebDesignMastery tutorial project:
+    https://github.com/WebDesignMastery/WDM-Co_07-07-23 
+*/
 
-.popular__card {
-    overflow: hidden;
-    border-radius: 2rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.popular__content {
-    padding: 1rem;
-}
-
-.popular__card__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.popular__card__header h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.popular__content p {
-    color: var(--text-light);
-}
-
-.client {
-    background-color: var(--extra-light);
-}
-
-.client__grid {
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.client__card {
-    padding: 2rem;
-    background-color: var(--white);
-    border-radius: 2rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.client__card img {
-    max-width: 80px;
-    margin: auto;
-    margin-bottom: 1rem;
-    border-radius: 90%;
-}
-
-.client__card p {
-    text-align: center;
-    color: var(--text-dark);
-}
- */
 .footer {
     background-color: var(--extra-light);
 }
@@ -497,3 +437,7 @@ a {
     }
 }
 
+/* 
+    The styles for the footer and results container were adapted from the WebDesignMastery tutorial project:
+    https://github.com/WebDesignMastery/WDM-Co_07-07-23 
+*/

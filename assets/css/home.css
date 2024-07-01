@@ -50,11 +50,14 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+.nav_background {
+  background-color: hsla(221, 14%, 9%, 1);
+}
 
 .nav__logo {
   font-size: 2rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: white;
 }
 
 .nav__links {
@@ -65,14 +68,14 @@ nav {
 }
 
 .nav__links a {
-  color: #666; /* Nav Bar Text Color*/
+  color: #fcfcfc; /* Nav Bar Text Color*/
   text-decoration: none;
   margin: 0 0px;
   padding: 0px;
 }
 
 .nav__links a:hover {
-  color: black; /* Nav Bar Text on Hover*/
+  color: hsla(198, 100%, 70%, 1); /* Nav Bar Text on Hover*/
 }
 
 .link a {
@@ -109,7 +112,7 @@ nav {
   padding: 5rem;
   max-width: 50%;
   color: #fff;
-  z-index: 4;
+  z-index: 2;
 }
 
 .header__content h1 {
@@ -121,21 +124,26 @@ nav {
 }
 
 .header__content p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   font-family: "Poppins", sans-serif;
 }
 
+.hero_text {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .hero_button {
-  background-color: white;
+  background-color: hsla(198, 100%, 70%, 1);
+  color: white;
+  border: 0;
   border-radius: 5px;
-  padding: 10px 20px;
-  width: 600px;
-  max-width: 25%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: relative;
-  bottom: 30%;
-  position: relative;
+  font-size: 14px;
+  padding: 10px 25px;
 }
 
 /* Hero Gradient overlay */
@@ -157,14 +165,14 @@ nav {
 /* Home Page Weather Section */
 .weather-section {
   padding: 4rem 1rem;
-  background-color: #f3f4f6; /* Light background color */
-  text-align: center; /* Center the content */
+  background-color: #f3f4f6;
+  text-align: center;
 }
 
 .weather-heading {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2c3855;
+  color: var(--text-dark);
   margin-bottom: 1rem;
 }
 
@@ -198,7 +206,7 @@ nav {
 h2,
 label,
 p {
-  color: white;
+  color: rgb(0, 0, 0);
   margin: 8px 0;
 }
 input {
@@ -211,7 +219,7 @@ input {
 }
 
 button.weatherAP_Button {
-  background: pink;
+  background: hsla(198, 100%, 70%, 1);
   color: white;
   padding: 10px;
   border: none;
@@ -222,7 +230,7 @@ button.weatherAP_Button {
   font-size: 15px;
 }
 button.weatherAp_Button:hover {
-  background: #8b48d7;
+  background: hsla(198, 100%, 70%, 1);
 }
 
 #temp-div p {
@@ -426,9 +434,42 @@ button.weatherAp_Button:hover {
   text-align: center;
   color: var(--text-dark);
 }
+.testimonies-subtitle {
+  text-align: center;
+  color: #767268;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Reward Container */
+#reward__container {
+  color: #767268;
+  justify-content: center;
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+#reward__container h2,
+label,
+p {
+  color: black;
+  margin: 8px 0;
+}
+
+.reward__btn {
+  background-color: hsla(198, 100%, 70%, 1);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 120px;
+  font-size: 15px;
+}
 
 .footer {
-  background-color: var(--extra-light);
+  background-color: hsla(221, 14%, 9%, 1);
 }
 
 .footer__container {
@@ -441,14 +482,14 @@ button.weatherAp_Button:hover {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: white;
 }
 
 .footer__col h4 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: white;
 }
 
 .footer__col p {
@@ -459,7 +500,7 @@ button.weatherAp_Button:hover {
 }
 
 .footer__col p:hover {
-  color: var(--text-dark);
+  color: hsla(198, 100%, 70%, 1);
 }
 
 .footer__bar {
