@@ -1,0 +1,77 @@
+/*Styling of modal search button*/
+button.search {
+  background-color: rgb(85, 156, 10);
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 10px 25px;
+  margin-top: 3vh;
+}
+
+/*Close button*/
+button.close {
+  background-color: #ffffff;
+  color: black;
+  font-size: 14px;
+  border: none;
+  position: relative;
+  bottom: 12vh;
+  left: 47vh;
+}
+
+/*Search bar*/
+#destination {
+  color: black;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  padding: 10px 25px;
+}
+
+/*Modal*/
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vw;
+  width: 100vh;
+  transition: 0.3s ease;
+}
+
+.modal-container.show {
+  pointer-events: auto;
+  opacity: 1;
+  width: 100vw;
+  z-index: 1;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px 50px;
+  width: 600px;
+  max-width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  bottom: 30%;
+  position: relative;
+}
+
+.modal h1 {
+  margin: 0;
+}
+
+.modal p {
+  font-size: 14px;
+  opacity: 0.7;
+  padding: 0 0 8px;
+}
