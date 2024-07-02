@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("insideEventlistener");
 
       if (location && checkin && checkout && guests) {
-        const apiKey = 'a84483dbbd6649e736e9ee99bd6b49a698985bf06677556beefc4d13da0272ad';
+        const apiKey = '86ff513e1977efc13c7d8bf3df1893184756138b5d4c7c7004e96f37a1339138';
         // Uses CorsProxy
         const apiUrl = `https://corsproxy.io/?https://serpapi.com/search.json?engine=google_hotels&q=${location}&check_in_date=${checkin}&check_out_date=${checkout}&adults=${guests}&currency=USD&gl=us&hl=en&api_key=${apiKey}`;
         console.log("insideIflistener");
