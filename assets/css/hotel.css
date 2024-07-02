@@ -81,7 +81,7 @@ a {
     background-image: linear-gradient(to right,
             rgba(44, 56, 85, 0.9),
             rgba(52, 217, 232, 0.1)),
-        url("/assets/images/header.jpg");
+        url("../images/header.jpg"); 
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
