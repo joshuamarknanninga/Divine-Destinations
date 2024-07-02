@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
           })
           .catch(error => console.error('Error fetching data:', error));
       } else {
-        alert('Please fill in all fields.');
+        
       }
     });
   
