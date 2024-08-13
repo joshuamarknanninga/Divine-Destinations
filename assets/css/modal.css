@@ -3,7 +3,7 @@ button.search {
   background-color: rgb(85, 156, 10);
   color: white;
   border: 0;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-size: 14px;
   padding: 10px 25px;
@@ -42,8 +42,8 @@ button.close {
   pointer-events: none;
   top: 0;
   left: 0;
-  height: 100vw;
-  width: 100vh;
+  height: 50vw;
+  width: 50vh;
   transition: 0.3s ease;
 }
 
